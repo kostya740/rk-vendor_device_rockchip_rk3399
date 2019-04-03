@@ -94,6 +94,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/dptx.bin:root/lib/firmware/rockchip/dptx.bin
 
+#recovery fstab
+TARGET_RECOVERY_FSTAB := \
+    device/rockchip/rk3399/recovery.emmc.fstab \
+    device/rockchip/rk3399/recovery.nvme.fstab \
+    device/rockchip/rk3399/recovery.sd.fstab
+
 #
 #add Rockchip properties here
 #
