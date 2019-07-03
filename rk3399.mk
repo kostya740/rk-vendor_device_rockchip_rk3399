@@ -37,6 +37,8 @@ PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/s
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.version = 1.0.0 \
     ro.product.ota.host = www.rockchip.com:2300 \
-    ro.sf.lcd_density=280
+    ro.sf.lcd_density=280 \
+    vendor.hwc.device.primary=HDMI-A
 
+BOARD_SHOW_HDMI_SETTING := true
 #PRODUCT_HAVE_OPTEE := true
