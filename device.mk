@@ -13,6 +13,9 @@
 # limitations under the License.
 #
 
+# customize
+$(call inherit-product-if-exists, vendor/customize/common/customize.mk)
+
 PRODUCT_PACKAGES += \
     memtrack.$(TARGET_BOARD_PLATFORM) \
     WallpaperPicker \
