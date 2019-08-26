@@ -16,6 +16,9 @@
 # customize
 $(call inherit-product-if-exists, vendor/customize/common/customize.mk)
 
+# Magisk
+BOOTIMG_SUPPORT_MAGISK := true
+
 PRODUCT_PACKAGES += \
     memtrack.$(TARGET_BOARD_PLATFORM) \
     WallpaperPicker \
