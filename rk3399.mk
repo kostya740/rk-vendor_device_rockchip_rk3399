@@ -18,6 +18,7 @@ include device/rockchip/rk3399/BoardConfig.mk
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/rockchip/rk3399/device.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
+$(call inherit-product-if-exists, vendor/opengapps-phone/opengapps-phone.mk)
 
 PRODUCT_CHARACTERISTICS := tablet
 
