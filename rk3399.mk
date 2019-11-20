@@ -29,6 +29,9 @@ PRODUCT_MODEL := rk3399
 PRODUCT_MANUFACTURER := rockchip
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
+# default not close screen
+DEVICE_PACKAGE_OVERLAYS += device/rockchip/common/overlay_screenoff
+
 PRODUCT_PACKAGES += \
     SoundRecorder
 
