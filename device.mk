@@ -76,6 +76,29 @@ PRODUCT_PACKAGES += \
      android.hardware.camera.provider@2.4-external-service
 endif
 
+ifeq ($(BOARD_HAS_GPS),true)
+
+PRODUCT_PACKAGES += \
+        android.hardware.gnss@1.0-impl \
+        android.hardware.gnss@1.0-service \
+        gps.$(TARGET_BOARD_PLATFORM)
+
+PRODUCT_COPY_FILES += \
+        hardware/kostya740/gps/gps.cfg:system/etc/gps.cfg
+        # hardware/kostya740/gps/gps.default.so.1:vendor/lib64/hw/gps.default.so
+        # hardware/kostya740/gps/gps_cfg.inf:system/etc/gps_cfg.inf
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.kernel.android.gps=ttyS4 \
+    ro.kernel.android.gps.speed=57600 \
+    ro.kernel.android.gps.max_rate=1
+
+endif ### BOARD_HAS_GPS ###
+
+# Add kostya740 apps
+# PRODUCT_PACKAGES += \
+#         GPS-Test-app
+
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
