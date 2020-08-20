@@ -31,7 +31,9 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # default not close screen
 DEVICE_PACKAGE_OVERLAYS += device/rockchip/common/overlay_screenoff
-
+BUILD_NUMBER := $(shell $(DATE) +%Y%m%d)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.display.id=CarPC_Pie_$(BUILD_NUMBER)
 PRODUCT_PACKAGES += \
     SoundRecorder
 
@@ -41,8 +43,10 @@ PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/s
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.version = 1.0.0 \
     ro.product.ota.host = www.rockchip.com:2300 \
-    ro.sf.lcd_density=280 \
-    vendor.hwc.device.primary=HDMI-A
+    ro.sf.lcd_density=240 \
+    vendor.hwc.device.primary=HDMI-A \
+    persist.hdmi.ui.state=2 \
+    persist.sys.rotation.efull=true
 
 BOARD_SHOW_HDMI_SETTING := true
 #PRODUCT_HAVE_OPTEE := true
