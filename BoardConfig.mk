@@ -59,6 +59,9 @@ TARGET_PREFER_32_BIT_APPS :=
 TARGET_SUPPORTS_64_BIT_APPS := true
 endif
 
+# support devices to install magisk through include ramdisk in boot.img
+BOOTIMG_SUPPORT_MAGISK ?= true
+
 # Sensors
 BOARD_SENSOR_ST := false
 BOARD_SENSOR_MPU_VR := false
